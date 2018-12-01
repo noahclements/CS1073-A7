@@ -21,42 +21,28 @@ public class Decryptor {
 
 		System.out.println(columns);
 		System.out.println(encryptedInput);
+
+		int counter = 0;
 		//if(columns == 0) {
 
 		//} else {
 		//	do {
 		
-				// method 1
 				char [][] decryptBlock = new char[columns][columns];
-				/*
-				for(int row = columns-1; 0 <= row; row--) {
-					for(int col = 0; col < columns; col++, columnCounter++) {
-						if(columnCounter < encryptedInput.length()) {
-							decryptBlock[row][col] = ch;
-							//columnCounter = columnCounter + columns;
-							ch = encryptedInput.charAt(columnCounter);
-						}
-						columnCounter = columnCounter + columns;
-					}
-				}
-*/
-				// method 2
 				for(int row = 0; row < columns; row++) {
-					for(int col = columns-1; 0 <= col; col--, columnCounter++) {
-						ch = encryptedInput.charAt(columnCounter);
-						decryptBlock[col][row] = ch;
-						//columnCounter = columnCounter + columns;
-						//ch = encryptedInput.charAt(columnCounter);
+					if(row % 2 == 0) {
+						for(int col = columns-1; 0 <= col; col--, columnCounter++) {
+							ch = encryptedInput.charAt(columnCounter);
+							decryptBlock[col][row] = ch;
+						}
+					} else {
+						for(int col = 0; col < columns; col++, columnCounter++) {
+							ch = encryptedInput.charAt(columnCounter);
+							decryptBlock[col][row] = ch;
+						}
 					}
+					
 				}
-
-
-
-
-
-
-
-
 
 
 				for(int i = 0; i < columns; i++) {
