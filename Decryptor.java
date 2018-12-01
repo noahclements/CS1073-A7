@@ -11,7 +11,7 @@ public class Decryptor {
 		//System.out.println(sc.nextInt());
 		//sc.next();
 		//encryptedInput = sc.nextLine();
-
+		String decryptedOutput = "";
 		//sc.next();
 		columns = sc.nextInt();
 		sc.nextLine();
@@ -28,6 +28,7 @@ public class Decryptor {
 		//} else {
 		//	do {
 		
+				// ALGORITHM 1 FOR DECRYPTION : BOTTOM TO TOP, TOP TO BOTTOM FROM LEFT TO RIGHT
 				char [][] decryptBlock = new char[columns][columns];
 				for(int row = 0; row < columns; row++) {
 					if(row % 2 == 0) {
@@ -44,13 +45,30 @@ public class Decryptor {
 					
 				}
 
-
+				// printing for clarity
 				for(int i = 0; i < columns; i++) {
 					for(int x = 0; x < columns; x++) {
 						System.out.print(decryptBlock[i][x]);
 					}
 					System.out.println();
 				}
+
+				// ALGORITHM 2 FOR DECRYPTION: PRINTING LEFT TO RIGHT, RIGHT TO LEFT FROM TOP TO BOTTOM
+
+				for(int row = 0; row < columns; row++){
+					if(row % 2 == 0) {
+						for(int col = 0; col < columns; col++) {
+							decryptedOutput += decryptBlock[row][col];
+						}
+					} else {
+						for(int col = columns -1; 0 <= col; col--) {
+							decryptedOutput += decryptBlock[row][col];
+						}
+					}
+				}
+				System.out.println(decryptedOutput);
+
+
 
 					/*
 					columns = sc.nextInt();
