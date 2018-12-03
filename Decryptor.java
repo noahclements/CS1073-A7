@@ -23,11 +23,13 @@ public class Decryptor {
 		System.out.println(encryptedInput);
 
 		int counter = 0;
+		int numOfRows = encryptedInput.length / columns;
 		//if(columns == 0) {
 
 		//} else {
 		//	do {
-		
+				// problem: algorithm is hard coded for first example of 5 columns, it thinks its a square instead of rectangle
+				// idea: encryptedInput.length / columns = row, ex. columns =5, input = 25.. 25 / 5 = 5, row = 5
 				// ALGORITHM 1 FOR DECRYPTION : BOTTOM TO TOP, TOP TO BOTTOM FROM LEFT TO RIGHT
 				char [][] decryptBlock = new char[columns][columns];
 				for(int row = 0; row < columns; row++) {
