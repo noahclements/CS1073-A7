@@ -4,7 +4,7 @@ public class Decryptor {
 		Scanner sc = new Scanner(System.in);
 		int columns = 0;
 		String encryptedInput = "";
-		
+
 		// finds the first number for columns, and then the encrypted string
 		columns = sc.nextInt();
 		sc.nextLine();
@@ -63,7 +63,7 @@ public class Decryptor {
 						}
 					}
 				}
-				System.out.println(decryptedOutput);
+				System.out.println(decryptedOutput); // prints out the complete decrypted string
 
 
 
