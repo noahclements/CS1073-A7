@@ -3,7 +3,7 @@ public class Decryptor {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int columns = 0;
-		int columnCounter = 0;
+		//int columnCounter = 0;
 		
 		String encryptedInput = "";
 		//String[][] decryptBlock;
@@ -11,7 +11,6 @@ public class Decryptor {
 		//System.out.println(sc.nextInt());
 		//sc.next();
 		//encryptedInput = sc.nextLine();
-		String decryptedOutput = "";
 		//sc.next();
 		columns = sc.nextInt();
 		sc.nextLine();
@@ -22,15 +21,18 @@ public class Decryptor {
 		System.out.println(columns);
 		System.out.println(encryptedInput);
 
-		int counter = 0;
-		int numOfRows = encryptedInput.length() / columns;
-		//if(columns == 0) {
+		//int counter = 0;
+		int numOfRows = 0; 
+		if(columns == 0) {
 
-		//} else {
-		//	do {
+		} else {
+			do {
 				// problem: algorithm is hard coded for first example of 5 columns, it thinks its a square instead of rectangle
 				// idea: encryptedInput.length / columns = row, ex. columns =5, input = 25.. 25 / 5 = 5, row = 5
 				// ALGORITHM 1 FOR DECRYPTION : BOTTOM TO TOP, TOP TO BOTTOM FROM LEFT TO RIGHT
+				String decryptedOutput = "";
+				int columnCounter = 0;
+				numOfRows = encryptedInput.length() / columns;
 				char [][] decryptBlock = new char[numOfRows][columns];
 				for(int row = 0; row < columns; row++) {
 					if(row % 2 == 0) {
@@ -72,15 +74,17 @@ public class Decryptor {
 
 
 
-					/*
+					
 					columns = sc.nextInt();
-					sc.nextLine();
-					encryptedInput = sc.nextLine();
-*/
+					if(sc.hasNextLine()) {
+						sc.nextLine();
+						encryptedInput = sc.nextLine();
+					}
 
 
-			//} while(columns != 0);
-		//}
+
+			} while(columns != 0);
+		}
 		
 
 
