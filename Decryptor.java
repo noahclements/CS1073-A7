@@ -1,3 +1,7 @@
+/**
+	A class representing the decryptor that reverses through the given encryption algorithm to find the decrypted string
+	@author Noah Clements 3585596
+*/
 import java.util.Scanner;
 public class Decryptor {
 	public static void main(String[] args) {
@@ -11,8 +15,7 @@ public class Decryptor {
 		encryptedInput = sc.nextLine();
 
 
-		System.out.println(columns);
-		System.out.println(encryptedInput);
+		
 
 		int numOfRows = 0; 
 		if(columns == 0) {
@@ -42,13 +45,7 @@ public class Decryptor {
 					
 				}
 
-				// printing for clarity
-				for(int i = 0; i < numOfRows; i++) {
-					for(int x = 0; x < columns; x++) {
-						System.out.print(decryptBlock[i][x]);
-					}
-					System.out.println();
-				}
+				
 
 				// ALGORITHM 2 FOR DECRYPTION: PRINTING LEFT TO RIGHT, RIGHT TO LEFT FROM TOP TO BOTTOM
 
