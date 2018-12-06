@@ -1,34 +1,24 @@
-public class ShortTermResidentMember {
-	private ResidentMember fullName;
-	private ResidentMember roomNum;
-	private ResidentMember phoneNum;
-	private ResidentMember membershipNum;
+public class ShortTermResidentMember extends ResidentMember{
+	private String fullName;
+	private int roomNum;
+	private String phoneNum;
 	private String departureDate;
 
-	public ShortTermResidentMember(ResidentMember nameIn, ResidentMember roomNumIn, ResidentMember phoneNumIn, String departureIn) {
-		fullName = nameIn;
-		roomNum = roomNumIn;
-		phoneNum = phoneNumIn;
+	public ShortTermResidentMember(String nameIn, int roomNumIn, String phoneNumIn, String departureIn) {
+		super(nameIn, roomNumIn, phoneNumIn);
 		departureDate = departureIn;
 	}
 
-	public ResidentMember getName() {
-
-	}
-
-	public ResidentMember getRoomNum() {
-
-	}
-
-	public ResidentMember getPhoneNum() {
-
-	}
-
-	public ResidentMember getMembershipNum() {
-
-	}
 
 	public String getDepartureDate() {
-		
+		return departureDate;
+	}
+
+	public boolean signOut(LendingItem book) {
+		boolean success = false;
+		if(book.isBookClubRecommended() == false) {
+			success = super.signOut(book);
+		} 
+		return success;
 	}
 }

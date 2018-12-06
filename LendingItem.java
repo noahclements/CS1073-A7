@@ -17,7 +17,7 @@ public class LendingItem {
 		return price;
 	}
 
-	public boolean getRecommendation() {
+	public boolean isBookClubRecommended() {
 		return recommended;
 	}
 }
